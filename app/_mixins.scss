@@ -1,0 +1,88 @@
+// SCSS Mixins - Reusable style patterns
+@import 'variables';
+// Media Query Mixin
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == md {
+    @media (width > 760px) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    @media (width > 1024px) {
+      @content;
+    }
+  } @else if $breakpoint == xl {
+    @media (width > 1280px) {
+      @content;
+    }
+  }
+}
+
+// Flexbox Center Mixin
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Flexbox Space Between Mixin
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// Wrapper Mixin
+@mixin wrapper {
+  max-width: 1130px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+// Visually Hidden Mixin
+@mixin visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+// Button Base Mixin
+@mixin button-base {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  color: $text-high-contrast;
+  border-radius: $border-radius-1;
+  background-color: $background-accent-main;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: $font-size-md;
+  margin-top: 2rem;
+  font-weight: bold;
+}
+
+// Card Base Mixin
+@mixin card-base {
+  background-color: $background-light;
+  padding: 1.5rem;
+  border-radius: $border-radius-2;
+}
+
+// Heading Base Mixin
+@mixin heading-base {
+  font-family: var(--ff-heading, 'Outfit', sans-serif);
+  font-weight: 700;
+  color: $text-high-contrast;
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+// Grid Mixin
+@mixin grid($columns: 1, $gap: 2rem) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+}

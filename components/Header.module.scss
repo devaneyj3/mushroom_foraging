@@ -1,0 +1,26 @@
+@import '../app/variables';
+@import '../app/mixins';
+
+// Add your Header styles here
+.wrapper {
+  max-width: 1130px;
+  margin-inline: auto;
+  .wrapper_narrow {
+    max-width: 700px;
+  }
+}
+
+.siteHeader {
+  padding-block: 1rem
+}
+
+.site_header_inner {
+  @include flex-between;
+
+}
+.primaryNavigation {
+  ul {
+    display: flex;
+    gap: 1rem;
+  }
+}

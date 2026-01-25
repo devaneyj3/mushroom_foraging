@@ -1,0 +1,17 @@
+@use '../app/variables' as v;
+@use '../app/mixins' as m;
+
+// Add your Card styles here
+
+.card {
+  border-radius: v.$border-radius-3;
+  background-color: v.$background-light;
+  padding: 1rem;
+  img {
+
+    border-radius: v.$border-radius-3;
+  }
+  h3 {
+    color: v.$text-brand;
+  }
+}
