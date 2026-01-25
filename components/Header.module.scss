@@ -24,3 +24,21 @@
     gap: 1rem;
   }
 }
+
+
+.hamburger_menu {
+  display: none;
+  @include respond-to(md) {
+    display: block;
+  }
+}
+// Utility class
+.visuallyHidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}

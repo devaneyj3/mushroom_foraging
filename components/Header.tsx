@@ -13,8 +13,12 @@ export default function Header() {
             alt="FungiFinders"
           />
         </Link>
+          <button className={styles.hamburger_menu} aria-controls='primary-nav ' aria-expanded='false'>
+            <span className={styles.visuallyHidden}>menu</span>
+            <img src="/assest/hamburger.svg" alt="" />
+          </button>
           
-        <nav className={styles.primaryNavigation}>
+        <nav id='primary-nav' className={styles.primaryNavigation}>
           <ul>
             <li>
               <Link href="/">Discover</Link>
