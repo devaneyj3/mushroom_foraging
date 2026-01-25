@@ -15,7 +15,7 @@ export default function Header() {
         </Link>
           <button className={styles.hamburger_menu} aria-controls='primary-nav ' aria-expanded='false'>
             <span className={styles.visuallyHidden}>menu</span>
-            <img src="/assest/hamburger.svg" alt="" />
+            <img src="/assets/hamburger.svg" alt="" />
           </button>
           
         <nav id='primary-nav' className={styles.primaryNavigation}>

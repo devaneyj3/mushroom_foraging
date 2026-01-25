@@ -23,12 +23,42 @@
     display: flex;
     gap: 1rem;
   }
+    @include respond-to(md) {
+      background-color: $background-accent-main;
+      padding: 2rem;
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: $font-size-lg;
+      font-weight: 700;
+    ul {
+      flex-direction: column;
+      gap: 0;
+      
+    }
+    li + li{
+      margin-block-start: 1.5rem;
+      padding-block-start: 1.5rem;
+        border-top: 2px solid $background-accent-light;
+    }
+  }
 }
 
 
 .hamburger_menu {
   display: none;
+  height: 50px;
+  width: 50px;
+  background-color: $background-main;
   @include respond-to(md) {
+    position: absolute;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    color: $text-high-contrast;
+    z-index: 1;
+    top: 0;
+    right: 0;
     display: block;
   }
 }
