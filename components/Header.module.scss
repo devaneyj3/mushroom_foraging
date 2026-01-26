@@ -11,7 +11,7 @@
 }
 
 .siteHeader {
-  padding-block: 1rem
+  padding-block: 1rem;
 }
 
 .site_header_inner {
@@ -20,45 +20,59 @@
 }
 .primaryNavigation {
   ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
-    gap: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem 2rem;
+  }
+
+  a {
+    text-decoration: none;
   }
     @include respond-to(md) {
-      background-color: $background-accent-main;
-      padding: 2rem;
-      position: absolute;
-      top: 0;
-      right: 0;
-      font-size: $font-size-lg;
-      font-weight: 700;
-    ul {
-      flex-direction: column;
-      gap: 0;
-      
-    }
-    li + li{
-      margin-block-start: 1.5rem;
-      padding-block-start: 1.5rem;
-        border-top: 2px solid $background-accent-light;
-    }
+      display: none;
+  }
+}
+
+.openMenu {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  padding: 2rem;
+  border-radius: $border-radius-3;
+  background: $background-accent-main;
+
+  ul {
+    flex-direction: column;
+    gap: 0;
+    font-size: $fs-700;
+    font-weight: 700;
+  }
+
+  li + li {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 2px solid $background-accent-light;
   }
 }
 
 
 .hamburger_menu {
   display: none;
-  height: 50px;
-  width: 50px;
-  background-color: $background-main;
+  height: 2rem;
+  width: 3rem;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  background: transparent;
+  color: $text-high-contrast;
+  border: 0;
+  cursor: pointer;
+
   @include respond-to(md) {
-    position: absolute;
-    background: transparent;
-    border: 0;
-    cursor: pointer;
-    color: $text-high-contrast;
-    z-index: 1;
-    top: 0;
-    right: 0;
     display: block;
   }
 }
