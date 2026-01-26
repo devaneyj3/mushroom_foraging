@@ -6,7 +6,7 @@ import styles from './page.module.scss'
 export default function Home() {
   return (
     <>
-      <section className={`${styles.hero}  ${styles.section}`}>
+      <section id='main' className={`${styles.hero}  ${styles.section}`}>
         <div className={styles.wrapper}>
           <h1 className={styles.siteTitle}>
             Discover the World of

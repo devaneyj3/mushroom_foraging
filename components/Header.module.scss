@@ -76,6 +76,26 @@
     display: block;
   }
 }
+
+.skip:not(:focus) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
+  position: absolute;
+  background-color: $background-accent-main;
+  padding: 1rem;
+  border-radius: $border-radius-2;
+}
+
+.skip {
+  position: absolute;
+  background-color: $background-accent-main;
+  padding: 1rem;
+  border-radius: $border-radius-2;
+}
 // Utility class
 .visuallyHidden {
   clip: rect(0 0 0 0);

@@ -7,6 +7,8 @@ import styles from './Header.module.scss'
 export default function Header() {
   const [openMenu, setOpenMenu] = useState(false)
   return (
+    <>
+    <a className={styles.skip} href='#main'>Skip to main content</a>
     <header className={styles.siteHeader}>
       <div className={styles.wrapper}>
         <div className={styles.site_header_inner}>
@@ -15,7 +17,7 @@ export default function Header() {
             className={styles.logo}
             src="/assets/fungi-finders.svg"
             alt="FungiFinders"
-          />
+            />
         </Link>
           <button className={styles.hamburger_menu} aria-controls='primary-nav' aria-expanded={openMenu} onClick={() => setOpenMenu(!openMenu)}>
             <span className={styles.visuallyHidden}>menu</span>
@@ -38,5 +40,6 @@ export default function Header() {
         </div>
       </div>
     </header>
+            </>
   )
 }
