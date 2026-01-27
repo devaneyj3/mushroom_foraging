@@ -2,61 +2,11 @@
 @import 'mixins';
 
 // Add your Home page styles here
-.section {
-  padding-block: 2rem;
-}
-
-.wrapper {
-  @include wrapper;
-  
-  .wrapper_narrow {
-    max-width: 500px;
-    margin-inline: auto;
-    padding-block: 2rem;
-    text-align: center;
-  }
-}
-
-.hero {
-  background-image: url('/assets/hero.webp');
-  font-size: $font-size-md;
-  background-size: cover;
-  text-align: center;
-  background-color: $background-extra-dark;
-  background-position: center;
-
-}
-
-.siteTitle {
-  font-size: $font-size-heading-lg;
-  span {
-    font-size: $font-size-heading-xl;
-    display: block;
-  }
-}
-.background_accent {
-  background-color: $background-accent-dark;
-  h2, p {
-    color: white
-  }
-}
-.extra_dark {
-  background-color: $background-extra-dark
-}
 
 .equalColumns {
   @include grid(3);
   padding-block: 2rem;
-  font-size: $font-size-lg
-}
-
-.two_columns {
   font-size: $font-size-lg;
-  @include grid(2);
-  margin-inline: auto;
-  padding-block: 3rem;
-  gap: 3;
-  align-items: center;
 }
 
 .button {

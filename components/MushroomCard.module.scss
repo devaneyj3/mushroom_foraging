@@ -1,0 +1,73 @@
+@import '../app/variables';
+@import '../app/mixins';
+
+// Mushroom guide cards
+
+.visuallyHidden {
+  @include visually-hidden;
+}
+
+.card {
+  @include card-base;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.25rem;
+
+  h3 {
+    @include heading-base;
+    font-size: $font-size-heading-sm;
+  }
+
+  p {
+    font-size: $font-size-md;
+  }
+}
+
+.cardNote {
+  margin-top: auto;
+  background-color: $background-extra-light;
+  padding: 0.75rem;
+  border-radius: $border-radius-2;
+  font-size: $font-size-sm;
+}
+
+.tagList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0 0 0.5rem 0;
+  list-style: none;
+
+  li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: $border-radius-1;
+    padding: 0.25rem 0.75rem;
+    font-size: $font-size-sm;
+    text-transform: capitalize;
+    color: $text-high-contrast;
+  }
+
+  [data-edible='edible'] {
+    background-color: $background-accent-main;
+  }
+
+  [data-edible='toxic'] {
+    background-color: $clr-red-500;
+  }
+
+  [data-season='summer'] {
+    background-color: $background-accent-main;
+  }
+
+  [data-season='spring'] {
+    background-color: $clr-teal-500;
+  }
+
+  [data-season='fall'] {
+    background-color: $clr-orange-500;
+  }
+}

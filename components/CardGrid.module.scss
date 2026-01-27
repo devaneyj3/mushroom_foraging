@@ -1,0 +1,15 @@
+@import '../app/variables';
+@import '../app/mixins';
+
+// Add your CardGrid styles here
+
+.gridAutoFill {
+  display: grid;
+  gap: 1rem;
+  font-size: $font-size-lg;
+   grid-template-columns: repeat(
+        auto-fill,
+        minmax(min(var(--grid-auto-fill-min-column-size, 250px), 100%), 1fr)
+      );
+    
+}

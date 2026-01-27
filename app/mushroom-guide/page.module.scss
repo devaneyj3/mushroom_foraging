@@ -2,3 +2,47 @@
 @import '../mixins';
 
 // Add your Mushroom Guide page styles here
+
+.column {
+  @include grid(2)
+}
+
+.mushroom_guide {
+  margin: .25rem;
+}
+
+.filters {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+
+  select {
+    color: $text-high-contrast;
+    border-radius: $border-radius-2;
+    background-color: $background-accent-main;
+    border: none;
+    font-size: $font-size-md;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23fff' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    padding-right: 2.5rem;
+
+    &:hover {
+      background-color: $background-accent-dark;
+    }
+
+    &:focus {
+      outline: 2px solid $text-high-contrast;
+      outline-offset: 2px;
+    }
+  }
+}
+
+.visuallyHidden {
+  @include visually-hidden;
+}

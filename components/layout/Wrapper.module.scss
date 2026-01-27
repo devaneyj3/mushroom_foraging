@@ -1,0 +1,8 @@
+@import '../../app/variables';
+@import '../../app/mixins';
+
+// Add your Wrapper styles here
+
+.wrapper {
+  @include wrapper;
+}

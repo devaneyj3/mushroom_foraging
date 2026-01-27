@@ -65,9 +65,9 @@
 }
 
 // Card Base Mixin
-@mixin card-base {
+@mixin card-base($padding: 1.5rem) {
   background-color: $background-light;
-  padding: 1.5rem;
+  padding: $padding;
   border-radius: $border-radius-2;
 }
 

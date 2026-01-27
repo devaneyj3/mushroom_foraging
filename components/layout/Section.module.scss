@@ -1,0 +1,23 @@
+@import '../../app/variables';
+@import '../../app/mixins';
+
+.section {
+  padding-block: 2rem;
+
+  &[data-padding='compact'] {
+    padding-block: 1rem;
+  }
+}
+
+.backgroundAccent {
+  background-color: $background-accent-dark;
+
+  h2,
+  p {
+    color: white;
+  }
+}
+
+.backgroundExtraDark {
+  background-color: $background-extra-dark;
+}

@@ -1,0 +1,19 @@
+@import '../../app/variables';
+@import '../../app/mixins';
+
+.equalColumns {
+  font-size: $font-size-lg;
+  @include grid(2);
+  margin-inline: auto;
+  padding-block: 3rem;
+  gap: 3rem;
+  align-items: center;
+
+  &[data-vertical-alignment='centered'] {
+    align-items: center;
+  }
+
+  &[data-gap='large'] {
+    gap: 3rem;
+  }
+}
