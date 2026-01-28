@@ -13,6 +13,7 @@ import Hero from '@/components/Hero'
 import { MUSHROOMS } from '../../data/mushrooms'
 import { FAQS } from '../../data/faq'
 import Image from 'next/image'
+import Card from '@/components/Card'
 
 export default function MushroomGuide() {
   return (
@@ -64,52 +65,59 @@ export default function MushroomGuide() {
 
       <div className={styles.mushroom_guide}>
 
-      <Section>
-        <Wrapper>
-          <Title as="h2">Get to know your mushrooms</Title>
+        <Section>
+          <Wrapper>
+            <Title as="h2">Get to know your mushrooms</Title>
 
-          {/* Keep for future filtering UI */}
-          <div className={styles.filters}>
-            <label htmlFor="season" className={styles.visuallyHidden}>
-              Filter by season
-            </label>
-            <select name="season" id="season">
-              <option value="all">Season: All</option>
-              <option value="spring">Spring</option>
-              <option value="summer">Summer</option>
-              <option value="fall">Fall</option>
-            </select>
-            <label htmlFor="edible" className={styles.visuallyHidden}>
-              Filter by type
-            </label>
-            <select name="edible" id="edible">
-              <option value="all">Type: All</option>
-              <option value="edible">Edible</option>
-              <option value="toxic">Toxic</option>
-            </select>
-          </div>
-
-          <CardGrid>
-            {MUSHROOMS.map((m) => (
-              <MushroomCard key={`${m.title}-${m.season}-${m.edible}`} item={m} />
-            ))}
-          </CardGrid>
-
-          <div className={styles.noResultsMessage} hidden>
-            No cards match these filters
-          </div>
-        </Wrapper>
-      </Section>
-
+            {/* Keep for future filtering UI */}
+            <div className={styles.filters}>
+              <label htmlFor="season" className={styles.visuallyHidden}>
+                Filter by season
+              </label>
+              <select name="season" id="season">
+                <option value="all">Season: All</option>
+                <option value="spring">Spring</option>
+                <option value="summer">Summer</option>
+                <option value="fall">Fall</option>
+              </select>
+              <label htmlFor="edible" className={styles.visuallyHidden}>
+                Filter by type
+              </label>
+              <select name="edible" id="edible">
+                <option value="all">Type: All</option>
+                <option value="edible">Edible</option>
+                <option value="toxic">Toxic</option>
+              </select>
             </div>
+
+            <CardGrid>
+              {MUSHROOMS.map((m) => (
+                <MushroomCard key={`${m.title}-${m.season}-${m.edible}`} item={m} />
+              ))}
+            </CardGrid>
+
+            <div className={styles.noResultsMessage} hidden>
+              No cards match these filters
+            </div>
+          </Wrapper>
+        </Section>
+
+      </div>
       <Section id="faq" tone="extraDark" padding="compact">
         <Wrapper width="wide" flow>
           <Title as="h2">Frequently Asked Questions</Title>
 
           <div className={styles.faqBentoGrid}>
-            {FAQS.map((f) => (
-              <FAQCard key={f.title} item={f} />
-            ))}
+          {FAQS.map((f) => (
+            <Card
+            key={f.title}
+            image={f.imageSrc}
+            imageAlt={f.imageAlt}
+            title={f.title}
+            >
+              {f.body}
+            </Card>
+          ))}
           </div>
         </Wrapper>
       </Section>

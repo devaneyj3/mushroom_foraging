@@ -46,3 +46,50 @@
 .visuallyHidden {
   @include visually-hidden;
 }
+
+.faqBentoGrid {
+  color: $text-high-contrast;
+  display: grid;
+  gap: 1rem;
+  grid-template-areas:
+    "card-one"
+    "card-two"
+    "card-three"
+    "card-four";
+
+  // Assign grid areas to each card
+  > *:nth-child(1) {
+    grid-area: card-one;
+  }
+
+  > *:nth-child(2) {
+    grid-area: card-two;
+  }
+
+  > *:nth-child(3) {
+    grid-area: card-three;
+  }
+
+  > *:nth-child(4) {
+    grid-area: card-four;
+  }
+
+  @media (width > 600px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "card-one card-two"
+      "card-three card-four";
+  }
+
+  @media (width > 900px) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "card-one card-two card-four"
+      "card-three card-three card-four";
+
+    // Make card-three span 2 columns
+    > *:nth-child(3) {
+      grid-column: span 2;
+    }
+  }
+}
