@@ -1,11 +1,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import Card from '@/components/Card'
+import Card from '../components/Card'
 import styles from './page.module.scss'
 import Hero from '../components/Hero'
-import Wrapper from '@/components/layout/Wrapper'
-import Section from '@/components/layout/Section'
-import TwoCol from '@/components/layout/TwoCol'
+import Wrapper from '../components/layout/Wrapper'
+import Section from '../components/layout/Section'
+import TwoCol from '../components/layout/TwoCol'
 
 
 export default function Home() {

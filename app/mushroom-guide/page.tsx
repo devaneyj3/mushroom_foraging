@@ -2,18 +2,17 @@
 
 import React from 'react'
 import styles from './page.module.scss'
-import Section from '@/components/layout/Section'
-import Wrapper from '@/components/layout/Wrapper'
-import Title from '@/components/layout/Title'
-import TwoCol from '@/components/layout/TwoCol'
-import MushroomCard from '@/components/MushroomCard'
-import CardGrid from '@/components/CardGrid'
-import FAQCard, { type Faq } from '@/components/FAQCard'
-import Hero from '@/components/Hero'
+import Section from '../../components/layout/Section'
+import Wrapper from '../../components/layout/Wrapper'
+import Title from '../../components/layout/Title'
+import TwoCol from '../../components/layout/TwoCol'
+import MushroomCard from '../../components/MushroomCard'
+import CardGrid from '../../components/CardGrid'
+import Hero from '../../components/Hero'
 import { MUSHROOMS } from '../../data/mushrooms'
 import { FAQS } from '../../data/faq'
 import Image from 'next/image'
-import Card from '@/components/Card'
+import Card from '../../components/Card'
 
 export default function MushroomGuide() {
   return (
