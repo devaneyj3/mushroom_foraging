@@ -7,14 +7,22 @@
   @include grid(3);
   padding-block: 2rem;
   font-size: $font-size-lg;
+
+  @media (width < 860px) {
+    grid-template-columns: 1fr 1fr 1fr;
+    display: block;
+  }
+
 }
 
 .button {
   @include button-base;
+
   &:hover {
     background-color: $background-accent-light;
   }
 }
+
 // Utility class
 .visuallyHidden {
   clip: rect(0 0 0 0);

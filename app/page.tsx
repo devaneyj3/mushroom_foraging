@@ -38,6 +38,7 @@ export default function Home() {
             culinary treasure.
           </p>
 
+          
           <div className={styles.equalColumns}>
             <Card
               image="/assets/outdoor-exploration.webp"
