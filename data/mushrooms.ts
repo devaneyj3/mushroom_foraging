@@ -1,5 +1,6 @@
+import type { Mushroom } from '../components/MushroomCard'
 
-export const MUSHROOMS = [
+export const MUSHROOMS: Mushroom[] = [
   {
     title: 'Chanterelle',
     edible: 'edible',
