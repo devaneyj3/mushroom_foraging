@@ -15,5 +15,14 @@
 
   &[data-gap='large'] {
     gap: 3rem;
+  } @media (width < 960px) {  
+    display: block;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+    a {
+      margin-bottom: 2rem;
+    }
   }
 }

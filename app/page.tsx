@@ -11,7 +11,7 @@ import TwoCol from '../components/layout/TwoCol'
 export default function Home() {
   return (
     <>
-      <Hero>
+      <Hero title='Discover the World' span='of Mushroom Foraging'>
         <p>
           Mushroom foraging is the art and science of identifying and
           collecting wild mushrooms.

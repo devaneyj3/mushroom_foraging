@@ -9,7 +9,7 @@ import TwoCol from '../../components/layout/TwoCol'
 import MushroomCard from '../../components/MushroomCard'
 import CardGrid from '../../components/CardGrid'
 import Hero from '../../components/Hero'
-import { MUSHROOMS } from '../../data/mushrooms'
+import { MUSHROOMS } from  "../../data/mushrooms"
 import { FAQS } from '../../data/faq'
 import Image from 'next/image'
 import Card from '../../components/Card'
@@ -17,7 +17,7 @@ import Card from '../../components/Card'
 export default function MushroomGuide() {
   return (
     <>
-      <Hero>
+      <Hero title='Quick reference' span='Mushroom Guide'>
         <p>
           Discover a wide array of mushrooms from around the world, each with
           its own unique flavor profile and culinary uses.
