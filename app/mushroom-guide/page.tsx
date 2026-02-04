@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './page.module.scss'
 import Section from '../../components/layout/Section'
 import Wrapper from '../../components/layout/Wrapper'
@@ -14,7 +14,35 @@ import { FAQS } from '../../data/faq'
 import Image from 'next/image'
 import Card from '../../components/Card'
 
+
 export default function MushroomGuide() {
+  const [filters, setFilters] = useState({
+    season: "all",
+    edible: 'all'
+  })
+  
+  const [filteredMushrooms, setFilteredMushrooms] = useState(MUSHROOMS)
+
+  const onChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const { name, value } = e.target
+    setFilters((prev) => ({
+      ...prev,
+      [name]: value,
+    }))
+  }
+  
+
+  useEffect(() => {
+    const filtered = MUSHROOMS.filter((mushroom) => {
+      const matchesSeason =
+        filters.season === 'all' || mushroom.season === filters.season
+      const matchesEdible =
+        filters.edible === 'all' || mushroom.edible === filters.edible
+      return matchesSeason && matchesEdible
+    })
+    setFilteredMushrooms(filtered)
+  }, [filters])
+  
   return (
     <>
       <Hero title='Quick reference' span='Mushroom Guide'>
@@ -73,7 +101,7 @@ export default function MushroomGuide() {
               <label htmlFor="season" className={styles.visuallyHidden}>
                 Filter by season
               </label>
-              <select name="season" id="season">
+              <select name="season" id="season" onChange={(e) =>onChange(e)}>
                 <option value="all">Season: All</option>
                 <option value="spring">Spring</option>
                 <option value="summer">Summer</option>
@@ -82,7 +110,7 @@ export default function MushroomGuide() {
               <label htmlFor="edible" className={styles.visuallyHidden}>
                 Filter by type
               </label>
-              <select name="edible" id="edible">
+              <select name="edible" id="edible" onChange={(e) =>onChange(e)}>
                 <option value="all">Type: All</option>
                 <option value="edible">Edible</option>
                 <option value="toxic">Toxic</option>
@@ -90,9 +118,9 @@ export default function MushroomGuide() {
             </div>
 
             <CardGrid>
-              {MUSHROOMS.map((m) => (
+              {filteredMushrooms.length >1 ? filteredMushrooms.map((m) => (
                 <MushroomCard key={`${m.title}-${m.season}-${m.edible}`} item={m} />
-              ))}
+              )): <p>No Matches</p>}
             </CardGrid>
 
             <div className={styles.noResultsMessage} hidden>

@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import Link from 'next/link'
+import {Link} from 'next-view-transitions'
 import styles from './Header.module.scss'
 
 export default function Header() {

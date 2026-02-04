@@ -1,8 +1,10 @@
+
 import type { Metadata } from 'next'
 import { Outfit, Fira_Sans } from 'next/font/google'
 import './globals.scss'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import { ViewTransitions } from 'next-view-transitions'
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -27,6 +29,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
+    <ViewTransitions>
+
     <html lang="en" className={`${outfit.variable} ${firaSans.variable}`}>
       <body>
         <Header />
@@ -34,5 +38,6 @@ export default function RootLayout({
         <Footer />
       </body>
     </html>
+    </ViewTransitions>
   )
 }
