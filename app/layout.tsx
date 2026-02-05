@@ -5,6 +5,7 @@ import './globals.scss'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { ViewTransitions } from 'next-view-transitions'
+import { ThemeProvider } from 'next-themes'
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -29,15 +30,21 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <ViewTransitions>
 
-    <html lang="en" className={`${outfit.variable} ${firaSans.variable}`}>
-      <body>
-        <Header />
-        <main>{children}</main>
-        <Footer />
-      </body>
-    </html>
-    </ViewTransitions>
+      <ViewTransitions>
+        <html
+          lang="en"
+          className={`${outfit.variable} ${firaSans.variable}`}
+          suppressHydrationWarning
+        >
+          <body>
+            <ThemeProvider attribute="data-theme" defaultTheme="light">
+              <Header />
+              {children}
+              <Footer />
+            </ThemeProvider>
+          </body>
+        </html>
+      </ViewTransitions>
   )
 }

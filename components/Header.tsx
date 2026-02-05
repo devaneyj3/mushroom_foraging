@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import {Link} from 'next-view-transitions'
 import styles from './Header.module.scss'
+import ThemeChanger from "./ThemeChanger"
 
 export default function Header() {
   const [openMenu, setOpenMenu] = useState(false)
@@ -35,7 +36,8 @@ export default function Header() {
               <li>
                 <Link href="/mushroom-guide#faq">FAQ</Link>
               </li>
-            </ul>
+              </ul>
+              <ThemeChanger/>
           </nav>
         </div>
       </div>

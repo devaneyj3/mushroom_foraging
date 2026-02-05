@@ -3,8 +3,15 @@
 
 
 :root {
-  background-color: $background-main;
-  color: $text-main;
+  --background: #{$background-main};
+  --foreground: #{$text-main};
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+[data-theme='dark'] {
+  --background: #{$dark-background};
+  --foreground: #{$dark-foreground};
 }
 
 h1,
