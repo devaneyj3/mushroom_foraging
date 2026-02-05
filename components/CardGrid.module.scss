@@ -11,5 +11,4 @@
         auto-fill,
         minmax(min(var(--grid-auto-fill-min-column-size, 250px), 100%), 1fr)
       );
-    
-}
+    }

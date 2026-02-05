@@ -26,6 +26,10 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem 2rem;
+    opacity: 1;
+    @starting-style {
+      opacity: 0;
+    }
   }
 
   a {
@@ -33,6 +37,9 @@
   }
     @include respond-to(md) {
       display: none;
+      // opacity: 0;
+      // transition: opacity 1s, display 1s;
+      // transition-behavior: allow-discrete;
   }
 }
 
@@ -44,6 +51,7 @@
   padding: 2rem;
   border-radius: $border-radius-3;
   background: $background-accent-main;
+  
 
   ul {
     flex-direction: column;

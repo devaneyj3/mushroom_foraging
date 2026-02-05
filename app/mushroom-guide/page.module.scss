@@ -4,10 +4,11 @@
 // Add your Mushroom Guide page styles here
 
 .column {
-  @include grid(2)
+  @include grid(2);
 }
 
 .mushroom_guide {
+  @include fade_in;
   margin: .25rem;
 }
 

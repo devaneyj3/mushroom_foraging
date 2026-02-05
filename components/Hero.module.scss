@@ -3,6 +3,7 @@
 
 .section {
   padding-block: 2rem;
+    @include fade_in;
 }
 
 .wrapper {

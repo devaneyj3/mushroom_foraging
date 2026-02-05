@@ -86,3 +86,20 @@
   grid-template-columns: repeat($columns, 1fr);
   gap: $gap;
 }
+
+@mixin fade_in {
+animation-name: fade_in;
+animation-duration: 1.2s; //sets the time of animation
+animation-timing-function: ease;
+animation-iteration-count: 1;
+animation-delay: 0;
+animation-play-state: running;
+animation-direction: normal;
+animation-fill-mode: both;
+animation-timeline: view();
+
+}
+@keyframes fade_in {
+  from { opacity:0};
+  to {opacity: 1;}
+}
